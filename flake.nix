@@ -3,7 +3,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.05";
     flake-utils.url = "github:numtide/flake-utils";
 
-    openocd_src.url = "github:openocd-org/openocd";
+    openocd_src.url = "git+https://github.com/openocd-org/openocd.git?submodules=1";
     openocd_src.flake = false;
   };
 
@@ -17,6 +17,19 @@
 
           openocd = pkgs.openocd.overrideAttrs (oldAttrs: {
             src = openocd_src;
+            patches = [];
+
+            patchPhase = ''
+              sed -i "/git/d" bootstrap
+              ./bootstrap
+            '';
+
+            nativeBuildInputs = oldAttrs.nativeBuildInputs ++ (with pkgs; [
+              autoconf
+              automake
+              libtool
+              which
+            ]);
           });
         };
       }

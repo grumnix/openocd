@@ -1,0 +1,62 @@
+{
+  "nodes": {
+    "flake-utils": {
+      "locked": {
+        "lastModified": 1659877975,
+        "narHash": "sha256-zllb8aq3YO3h8B/U0/J1WBgAL8EX5yWf5pMj3G0NAmc=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "c0e246b9b83f637f4681389ecabcb2681b4f3af0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1661262176,
+        "narHash": "sha256-42FXNd2B0QECaULG0Vx+oYzQ9euKcmlg2gmX2D+HbKI=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "b9fd420fa535fd254c6f1f26df770b32a9dc98b4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-22.05",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "openocd_src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1661119447,
+        "narHash": "sha256-d23TRVAS9hpeUhaVHeZAId4WcE3oGTeObu7FoW4g3ck=",
+        "ref": "refs/heads/master",
+        "rev": "f77c919cf4dd25d3540bdef7d0bf60f5b84d5dd6",
+        "revCount": 9698,
+        "submodules": true,
+        "type": "git",
+        "url": "https://github.com/openocd-org/openocd.git"
+      },
+      "original": {
+        "submodules": true,
+        "type": "git",
+        "url": "https://github.com/openocd-org/openocd.git"
+      }
+    },
+    "root": {
+      "inputs": {
+        "flake-utils": "flake-utils",
+        "nixpkgs": "nixpkgs",
+        "openocd_src": "openocd_src"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
